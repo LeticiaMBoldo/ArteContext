@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200526194635_criando-banco.cs" />
+    <Compile Remove="Migrations\20200526194635_criando-banco.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\ArtesContext.cs~RF91027f.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fe\bootstrapcarouselswipe\bootstrap-carousel-swipe.js" />
+    <None Include="wwwroot\fe\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\fe\dropdown\js\nav-dropdown.js" />
+    <None Include="wwwroot\fe\dropdown\js\navbar-dropdown.js" />
+    <None Include="wwwroot\fe\formoid\formoid.min.js" />
+    <None Include="wwwroot\fe\gallery\player.min.js" />
+    <None Include="wwwroot\fe\gallery\script.js" />
+    <None Include="wwwroot\fe\imagesloaded\imagesloaded.pkgd.min.js" />
+    <None Include="wwwroot\fe\masonry\masonry.pkgd.min.js" />
+    <None Include="wwwroot\fe\popper\popper.min.js" />
+    <None Include="wwwroot\fe\slidervideo\script.js" />
+    <None Include="wwwroot\fe\smoothscroll\smooth-scroll.js" />
+    <None Include="wwwroot\fe\socicon\fonts\socicon.svg" />
+    <None Include="wwwroot\fe\tether\tether.min.js" />
+    <None Include="wwwroot\fe\theme\js\script.js" />
+    <None Include="wwwroot\fe\touchswipe\jquery.touch-swipe.min.js" />
+    <None Include="wwwroot\fe\vimeoplayer\jquery.mb.vimeo_player.js" />
+    <None Include="wwwroot\fe\web\assets\jquery\jquery.min.js" />
+    <None Include="wwwroot\fe\web\assets\mobirise-icons\mobirise-icons.svg" />
+    <None Include="wwwroot\fe\ytplayer\jquery.mb.ytplayer.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\artistas\" />
+    <Folder Include="wwwroot\images\obras\" />
+  </ItemGroup>
+
+</Project>

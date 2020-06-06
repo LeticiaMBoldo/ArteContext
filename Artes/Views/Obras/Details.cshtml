@@ -1,0 +1,60 @@
+﻿@model Artes.Models.Obra
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Obra</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoObra)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoObra.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Artista)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Artista.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InspiradaEm)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InspiradaEm)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Representa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Representa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FotoArte)
+        </dt>
+        <dd class = "col-sm-10">
+            <img class="img-fluid" src="@(System.IO.File.Exists(ViewData["Caminho"] + Model.FotoArte) ? Url.Content(Model.FotoArte) : Url.Content("~/images/sem_foto.png"))" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataInscricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataInscricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

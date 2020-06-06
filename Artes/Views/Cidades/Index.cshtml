@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Artes.Models.Cidade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-4">
+                    <a asp-controller="Cidades" asp-action="Create" type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Adicionar Nova</a>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="text-center">Listagem | <b>Cidades</b></h2>
+                </div>
+                <div class="col-sm-4">
+                    <div class="search-box">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+                            <input type="text" class="form-control" placeholder="Pesquisar&hellip;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr style="background-color:gray">
+                    <th>@Html.DisplayNameFor(model => model.Nome) </th>
+                    <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="view" title="Detalhes" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="delete" title="Excluir" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+    <h1>Cidades</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <a >Edit</a> |
+                    <a >Details</a> |
+                    <a >Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+*@

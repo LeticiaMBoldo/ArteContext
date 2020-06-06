@@ -1,0 +1,72 @@
+﻿@model Artes.Models.Obra
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Obra</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoObraId" class="control-label"></label>
+                <select asp-for="TipoObraId" class="form-control" asp-items="ViewBag.TipoObraId"></select>
+                <span asp-validation-for="TipoObraId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArtistaId" class="control-label"></label>
+                <select asp-for="ArtistaId" class="form-control" asp-items="ViewBag.ArtistaId"></select>
+                <span asp-validation-for="ArtistaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InspiradaEm" class="control-label"></label>
+                <input asp-for="InspiradaEm" class="form-control" />
+                <span asp-validation-for="InspiradaEm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Representa" class="control-label"></label>
+                <input asp-for="Representa" class="form-control" />
+                <span asp-validation-for="Representa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoArte" class="control-label"></label>
+                <input type="hidden" asp-for="FotoArte">
+                <input type="file" name="Foto" id="Foto" class="form-control-file" accept=".jpg,.jpeg,.png,.gif">
+                <img class="img-fluid" src="@(System.IO.File.Exists(ViewData["Caminho"] + Model.FotoArte) ? Url.Content(Model.FotoArte) : Url.Content("~/images/sem_foto.png"))" />
+                <span asp-validation-for="FotoArte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        window.addEventListener('load', function () {
+            document.querySelector('input[type="file"]').addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    var img = document.querySelector('img');
+                    img.src = URL.createObjectURL(this.files[0]);
+                }
+            });
+        });
+    </script>
+}
