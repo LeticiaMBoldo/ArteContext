@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Artes.Data
 {
-    public class ArtesContext : IdentityDbContext<Usuario>
+    public class ArtesContext : IdentityDbContext<IdentityUser>
     {
         public ArtesContext (DbContextOptions<ArtesContext> options): base(options)
         {
@@ -70,7 +70,7 @@ namespace Artes.Data
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = "Artista",
-                NormalizedName = "Artista"
+                NormalizedName = "ARTISTA"
             }) ;
             //startando um usuario se não não vai ter como logar 
             //hasher possui os componentes para criar criptografia

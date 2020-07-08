@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Letícia Boldo\\Desktop\\EAD - ETEC\\webIII\\20200602\\Trabalho\\Artes\\Artes.csproj": {}
+    "C:\\Users\\Letícia Boldo\\Desktop\\Projetos\\Programação web\\ArteContext\\Artes\\Artes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Letícia Boldo\\Desktop\\EAD - ETEC\\webIII\\20200602\\Trabalho\\Artes\\Artes.csproj": {
+    "C:\\Users\\Letícia Boldo\\Desktop\\Projetos\\Programação web\\ArteContext\\Artes\\Artes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Letícia Boldo\\Desktop\\EAD - ETEC\\webIII\\20200602\\Trabalho\\Artes\\Artes.csproj",
+        "projectUniqueName": "C:\\Users\\Letícia Boldo\\Desktop\\Projetos\\Programação web\\ArteContext\\Artes\\Artes.csproj",
         "projectName": "Artes",
-        "projectPath": "C:\\Users\\Letícia Boldo\\Desktop\\EAD - ETEC\\webIII\\20200602\\Trabalho\\Artes\\Artes.csproj",
+        "projectPath": "C:\\Users\\Letícia Boldo\\Desktop\\Projetos\\Programação web\\ArteContext\\Artes\\Artes.csproj",
         "packagesPath": "C:\\Users\\Letícia Boldo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Letícia Boldo\\Desktop\\EAD - ETEC\\webIII\\20200602\\Trabalho\\Artes\\obj\\",
+        "outputPath": "C:\\Users\\Letícia Boldo\\Desktop\\Projetos\\Programação web\\ArteContext\\Artes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,6 +42,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.4, )"
@@ -79,12 +83,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -93,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

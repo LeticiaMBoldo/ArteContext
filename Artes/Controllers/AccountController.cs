@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Artes.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,7 +49,7 @@ namespace Artes.Controllers
 
             if(result.IsLockedOut)
             {
-                ModelState.AddModelError("", "Usuário bloqueado");
+                ModelState.AddModelError("", "Usuário bloqueado, aguarde alguns minutos e tente novamente");
                 return View();
             }
             else
@@ -64,6 +65,13 @@ namespace Artes.Controllers
         {
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize(Roles = "Administrador")]
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
         }
     }
 }
