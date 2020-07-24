@@ -25,7 +25,8 @@ namespace Artes.Models
         public bool RememberMe { get; set; }*/
     }
 
-   public class UserRegistrationModel
+
+    public class UserRegistrationModel
     {
         [Required(ErrorMessage = "Informe o Nome do Usuário")]
         public string Nome { get; set; }
@@ -42,6 +43,6 @@ namespace Artes.Models
         [Display(Name = "Comfirmação de Senha")]
         [DataType(DataType.Password)]
         [Compare("Senha", ErrorMessage = "Senha e Confirmação de Senha não conferem")]
-        public string confirmacaoSenha { get; set; }
+        public string ConfirmacaoSenha { get; set; }
     }
 }
